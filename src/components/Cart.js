@@ -2,13 +2,16 @@ import React from 'react';
 import CartItem from './CartItem';
 import './Cart.css';
 
-function Cart({ items, onRemove, onUpdateQuantity }) {
+function Cart({ items, onRemove, onUpdateQuantity, onBack }) {
   const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   if (items.length === 0) {
     return (
       <div className="cart-container">
-        <h2>Shopping Cart</h2>
+        <div className="cart-header">
+          <button className="back-button" onClick={onBack}>&#8592; Back to Shop</button>
+          <h2>Shopping Cart</h2>
+        </div>
         <div className="empty-cart">
           <p>Your cart is empty</p>
         </div>
@@ -18,7 +21,10 @@ function Cart({ items, onRemove, onUpdateQuantity }) {
 
   return (
     <div className="cart-container">
-      <h2>Shopping Cart</h2>
+      <div className="cart-header">
+        <button className="back-button" onClick={onBack}>&#8592; Back to Shop</button>
+        <h2>Shopping Cart</h2>
+      </div>
       <div className="cart-items">
         {items.map(item => (
           <CartItem

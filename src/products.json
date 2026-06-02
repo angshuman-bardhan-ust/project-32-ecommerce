@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "Wireless Headphones",
+    "price": 79.99,
+    "image": "https://picsum.photos/200",
+    "description": "High-quality wireless headphones with noise cancellation"
+  },
+  {
+    "id": 2,
+    "name": "Smart Watch",
+    "price": 199.99,
+    "image": "https://picsum.photos/200",
+    "description": "Feature-rich smartwatch with fitness tracking"
+  },
+  {
+    "id": 3,
+    "name": "USB-C Cable",
+    "price": 15.99,
+    "image": "https://picsum.photos/200",
+    "description": "Durable and fast charging USB-C cable"
+  },
+  {
+    "id": 4,
+    "name": "Phone Stand",
+    "price": 25.99,
+    "image": "https://picsum.photos/200",
+    "description": "Adjustable phone stand for any device"
+  },
+  {
+    "id": 5,
+    "name": "Portable Speaker",
+    "price": 59.99,
+    "image": "https://picsum.photos/200",
+    "description": "Waterproof Bluetooth speaker with 12-hour battery"
+  },
+  {
+    "id": 6,
+    "name": "Screen Protector",
+    "price": 12.99,
+    "image": "https://picsum.photos/200",
+    "description": "Tempered glass screen protector for smartphones"
+  }
+]

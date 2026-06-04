@@ -2,55 +2,48 @@ import React, { useState } from 'react';
 import './App.css';
 import ProductList from './components/ProductList';
 import Cart from './components/Cart';
+import FavoritesList from './components/FavoritesList';
+import productsData from './products.json';
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
-  const [showCart, setShowCart] = useState(false);
+  const [view, setView] = useState('products'); // 'products' | 'cart' | 'favorites'
+  const [searchQuery, setSearchQuery] = useState('');
+  const [sortOption, setSortOption] = useState('default');
+  const [categoryFilter, setCategoryFilter] = useState('all');
+  const [favoriteIds, setFavoriteIds] = useState([]);
 
-  const products = [
-    {
-      id: 1,
-      name: 'Wireless Headphones',
-      price: 79.99,
-      image: 'https://picsum.photos/200',
-      description: 'High-quality wireless headphones with noise cancellation'
-    },
-    {
-      id: 2,
-      name: 'Smart Watch',
-      price: 199.99,
-      image: 'https://picsum.photos/200',
-      description: 'Feature-rich smartwatch with fitness tracking'
-    },
-    {
-      id: 3,
-      name: 'USB-C Cable',
-      price: 15.99,
-      image: 'https://picsum.photos/200',
-      description: 'Durable and fast charging USB-C cable'
-    },
-    {
-      id: 4,
-      name: 'Phone Stand',
-      price: 25.99,
-      image: 'https://picsum.photos/200',
-      description: 'Adjustable phone stand for any device'
-    },
-    {
-      id: 5,
-      name: 'Portable Speaker',
-      price: 59.99,
-      image: 'https://picsum.photos/200',
-      description: 'Waterproof Bluetooth speaker with 12-hour battery'
-    },
-    {
-      id: 6,
-      name: 'Screen Protector',
-      price: 12.99,
-      image: 'https://picsum.photos/200',
-      description: 'Tempered glass screen protector for smartphones'
+  const products = productsData.filter(p =>
+    (p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      p.description.toLowerCase().includes(searchQuery.toLowerCase())) &&
+    (categoryFilter === 'all' || p.category === categoryFilter)
+  );
+
+  const categories = ['all', ...Array.from(new Set(productsData.map(p => p.category)))];
+
+  const sortedProducts = (() => {
+    const list = [...products];
+    switch (sortOption) {
+      case 'price-asc':
+        return list.sort((a, b) => a.price - b.price);
+      case 'price-desc':
+        return list.sort((a, b) => b.price - a.price);
+      case 'name-asc':
+        return list.sort((a, b) => a.name.localeCompare(b.name));
+      case 'name-desc':
+        return list.sort((a, b) => b.name.localeCompare(a.name));
+      default:
+        return list;
     }
-  ];
+  })();
+
+  const favoriteProducts = productsData.filter(p => favoriteIds.includes(p.id));
+
+  const toggleFavorite = (productId) => {
+    setFavoriteIds(prev =>
+      prev.includes(productId) ? prev.filter(id => id !== productId) : [...prev, productId]
+    );
+  };
 
   const addToCart = (product) => {
     const existingItem = cartItems.find(item => item.id === product.id);
@@ -86,24 +79,92 @@ function App() {
       <header className="header">
         <div className="header-container">
           <h1>🛍️ Product Store</h1>
-          <button
-            className="cart-button"
-            onClick={() => setShowCart(!showCart)}
-          >
-            🛒 Cart ({cartItems.length})
-          </button>
+          <div className="header-right">
+            {view === 'products' && (
+              <input
+                type="text"
+                className="search-input"
+                placeholder="Search products..."
+                value={searchQuery}
+                onChange={e => setSearchQuery(e.target.value)}
+              />
+            )}
+            {view === 'products' && (
+              <select
+                className="sort-select"
+                value={categoryFilter}
+                onChange={e => setCategoryFilter(e.target.value)}
+              >
+                {categories.map(cat => (
+                  <option key={cat} value={cat}>{cat === 'all' ? 'All Categories' : cat}</option>
+                ))}
+              </select>
+            )}
+            {view === 'products' && (
+              <select
+                className="sort-select"
+                value={sortOption}
+                onChange={e => setSortOption(e.target.value)}
+              >
+                <option value="default">Sort: Default</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="name-asc">Name: A → Z</option>
+                <option value="name-desc">Name: Z → A</option>
+              </select>
+            )}
+            <button
+              className={`nav-button favorites-button${view === 'favorites' ? ' active' : ''}`}
+              onClick={() => setView(view === 'favorites' ? 'products' : 'favorites')}
+            >
+              &#10084; Favorites
+              {favoriteIds.length > 0 && (
+                <span className="cart-badge">{favoriteIds.length}</span>
+              )}
+            </button>
+            <button
+              className={`cart-button${view === 'cart' ? ' active' : ''}`}
+              onClick={() => setView(view === 'cart' ? 'products' : 'cart')}
+            >
+              🛒 Cart
+              {cartItems.length > 0 && (
+                <span className="cart-badge">
+                  {cartItems.reduce((sum, item) => sum + item.quantity, 0)}
+                </span>
+              )}
+            </button>
+          </div>
         </div>
       </header>
 
       <main className="main-content">
-        {showCart ? (
+        {view === 'cart' && (
           <Cart
             items={cartItems}
             onRemove={removeFromCart}
             onUpdateQuantity={updateQuantity}
+            onBack={() => setView('products')}
           />
-        ) : (
-          <ProductList products={products} onAddToCart={addToCart} />
+        )}
+        {view === 'favorites' && (
+          <FavoritesList
+            favorites={favoriteProducts}
+            onRemoveFavorite={toggleFavorite}
+            onAddToCart={addToCart}
+            cartItems={cartItems}
+            onBack={() => setView('products')}
+          />
+        )}
+        {view === 'products' && (
+          <ProductList
+            products={sortedProducts}
+            onAddToCart={addToCart}
+            cartItems={cartItems}
+            onUpdateQuantity={updateQuantity}
+            onRemove={removeFromCart}
+            favoriteIds={favoriteIds}
+            onToggleFavorite={toggleFavorite}
+          />
         )}
       </main>
 

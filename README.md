@@ -91,10 +91,6 @@ Represents a single item in the cart with quantity controls and remove functiona
 - 🔍 Product search and filtering
 - ⭐ Product ratings and reviews
 - 🎯 Product categories
-- 💳 Payment integration
-- 👤 User authentication and profiles
-- 📦 Order history
-- 🎁 Coupon/discount code support
 
 ## Technologies Used
 

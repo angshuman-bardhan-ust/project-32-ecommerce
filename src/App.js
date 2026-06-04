@@ -9,12 +9,33 @@ function App() {
   const [cartItems, setCartItems] = useState([]);
   const [view, setView] = useState('products'); // 'products' | 'cart' | 'favorites'
   const [searchQuery, setSearchQuery] = useState('');
+  const [sortOption, setSortOption] = useState('default');
+  const [categoryFilter, setCategoryFilter] = useState('all');
   const [favoriteIds, setFavoriteIds] = useState([]);
 
   const products = productsData.filter(p =>
-    p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    p.description.toLowerCase().includes(searchQuery.toLowerCase())
+    (p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      p.description.toLowerCase().includes(searchQuery.toLowerCase())) &&
+    (categoryFilter === 'all' || p.category === categoryFilter)
   );
+
+  const categories = ['all', ...Array.from(new Set(productsData.map(p => p.category)))];
+
+  const sortedProducts = (() => {
+    const list = [...products];
+    switch (sortOption) {
+      case 'price-asc':
+        return list.sort((a, b) => a.price - b.price);
+      case 'price-desc':
+        return list.sort((a, b) => b.price - a.price);
+      case 'name-asc':
+        return list.sort((a, b) => a.name.localeCompare(b.name));
+      case 'name-desc':
+        return list.sort((a, b) => b.name.localeCompare(a.name));
+      default:
+        return list;
+    }
+  })();
 
   const favoriteProducts = productsData.filter(p => favoriteIds.includes(p.id));
 
@@ -68,6 +89,30 @@ function App() {
                 onChange={e => setSearchQuery(e.target.value)}
               />
             )}
+            {view === 'products' && (
+              <select
+                className="sort-select"
+                value={categoryFilter}
+                onChange={e => setCategoryFilter(e.target.value)}
+              >
+                {categories.map(cat => (
+                  <option key={cat} value={cat}>{cat === 'all' ? 'All Categories' : cat}</option>
+                ))}
+              </select>
+            )}
+            {view === 'products' && (
+              <select
+                className="sort-select"
+                value={sortOption}
+                onChange={e => setSortOption(e.target.value)}
+              >
+                <option value="default">Sort: Default</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="name-asc">Name: A → Z</option>
+                <option value="name-desc">Name: Z → A</option>
+              </select>
+            )}
             <button
               className={`nav-button favorites-button${view === 'favorites' ? ' active' : ''}`}
               onClick={() => setView(view === 'favorites' ? 'products' : 'favorites')}
@@ -112,7 +157,7 @@ function App() {
         )}
         {view === 'products' && (
           <ProductList
-            products={products}
+            products={sortedProducts}
             onAddToCart={addToCart}
             cartItems={cartItems}
             onUpdateQuantity={updateQuantity}

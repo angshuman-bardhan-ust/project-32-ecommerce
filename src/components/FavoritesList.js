@@ -1,7 +1,7 @@
 import React from 'react';
 import './FavoritesList.css';
 
-function FavoritesList({ favorites, onRemoveFavorite, onAddToCart, cartItems, onBack }) {
+function FavoritesList({ favorites, onRemoveFavorite, onAddToCart, cartItems, onUpdateQuantity, onBack }) {
   if (favorites.length === 0) {
     return (
       <div className="favorites-container">
@@ -39,12 +39,20 @@ function FavoritesList({ favorites, onRemoveFavorite, onAddToCart, cartItems, on
                 <p>{product.description}</p>
                 <div className="favorite-footer">
                   <span className="fav-price">${product.price}</span>
-                  <button
-                    className={`fav-add-btn${quantity > 0 ? ' in-cart' : ''}`}
-                    onClick={() => onAddToCart(product)}
-                  >
-                    {quantity > 0 ? `In Cart (${quantity})` : 'Add to Cart'}
-                  </button>
+                  {quantity > 0 ? (
+                    <div className="quantity-controls">
+                      <button onClick={() => onUpdateQuantity(product.id, quantity - 1)}>-</button>
+                      <span>{quantity}</span>
+                      <button onClick={() => onUpdateQuantity(product.id, quantity + 1)}>+</button>
+                    </div>
+                  ) : (
+                    <button
+                      className="fav-add-btn"
+                      onClick={() => onAddToCart(product)}
+                    >
+                      Add to Cart
+                    </button>
+                  )}
                 </div>
               </div>
             </div>

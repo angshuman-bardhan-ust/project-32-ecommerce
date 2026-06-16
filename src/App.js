@@ -3,6 +3,8 @@ import './App.css';
 import ProductList from './components/ProductList';
 import Cart from './components/Cart';
 import FavoritesList from './components/FavoritesList';
+import Notification from './components/Notification';
+import ConfirmModal from './components/ConfirmModal';
 import productsData from './products.json';
 
 function App() {
@@ -12,6 +14,8 @@ function App() {
   const [sortOption, setSortOption] = useState('default');
   const [categoryFilter, setCategoryFilter] = useState('all');
   const [favoriteIds, setFavoriteIds] = useState([]);
+  const [notification, setNotification] = useState(null);
+  const [confirmModal, setConfirmModal] = useState(null);
 
   const products = productsData.filter(p =>
     (p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -40,9 +44,24 @@ function App() {
   const favoriteProducts = productsData.filter(p => favoriteIds.includes(p.id));
 
   const toggleFavorite = (productId) => {
-    setFavoriteIds(prev =>
-      prev.includes(productId) ? prev.filter(id => id !== productId) : [...prev, productId]
-    );
+    const isFavorite = favoriteIds.includes(productId);
+    if (isFavorite) {
+      const product = productsData.find(p => p.id === productId);
+      setConfirmModal({
+        type: 'favorite',
+        productId,
+        onConfirm: () => {
+          setFavoriteIds(prev => prev.filter(id => id !== productId));
+          setConfirmModal(null);
+          setNotification({ message: `${product.name} removed from favorites!`, type: 'info' });
+        },
+        onCancel: () => setConfirmModal(null)
+      });
+    } else {
+      setFavoriteIds(prev => [...prev, productId]);
+      const product = productsData.find(p => p.id === productId);
+      setNotification({ message: `${product.name} added to favorites!`, type: 'success' });
+    }
   };
 
   const addToCart = (product) => {
@@ -53,18 +72,34 @@ function App() {
           ? { ...item, quantity: item.quantity + 1 }
           : item
       ));
+      setNotification({ message: `${product.name} quantity updated!`, type: 'success' });
     } else {
       setCartItems([...cartItems, { ...product, quantity: 1 }]);
+      setNotification({ message: `${product.name} added to cart!`, type: 'success' });
     }
   };
 
-  const removeFromCart = (productId) => {
-    setCartItems(cartItems.filter(item => item.id !== productId));
+  const removeFromCart = (productId, showConfirm = true) => {
+    if (showConfirm) {
+      const item = cartItems.find(item => item.id === productId);
+      setConfirmModal({
+        type: 'cart',
+        productId,
+        onConfirm: () => {
+          setCartItems(cartItems.filter(item => item.id !== productId));
+          setConfirmModal(null);
+          setNotification({ message: `${item.name} removed from cart!`, type: 'info' });
+        },
+        onCancel: () => setConfirmModal(null)
+      });
+    } else {
+      setCartItems(cartItems.filter(item => item.id !== productId));
+    }
   };
 
   const updateQuantity = (productId, quantity) => {
     if (quantity <= 0) {
-      removeFromCart(productId);
+      removeFromCart(productId, true);
     } else {
       setCartItems(cartItems.map(item =>
         item.id === productId
@@ -152,6 +187,7 @@ function App() {
             onRemoveFavorite={toggleFavorite}
             onAddToCart={addToCart}
             cartItems={cartItems}
+            onUpdateQuantity={updateQuantity}
             onBack={() => setView('products')}
           />
         )}
@@ -171,6 +207,25 @@ function App() {
       <footer className="footer">
         <p>&copy; 2026 Product Store. All rights reserved.</p>
       </footer>
+
+      {notification && (
+        <Notification
+          message={notification.message}
+          type={notification.type}
+          onClose={() => setNotification(null)}
+        />
+      )}
+
+      {confirmModal && (
+        <ConfirmModal
+          title={confirmModal.type === 'favorite' ? 'Remove Favorite' : 'Remove Item'}
+          message={confirmModal.type === 'favorite' ? 'Are you sure you want to remove this item from your favorites?' : 'Are you sure you want to remove this item from your cart?'}
+          onConfirm={confirmModal.onConfirm}
+          onCancel={confirmModal.onCancel}
+          confirmText="Remove"
+          cancelText="Keep"
+        />
+      )}
     </div>
   );
 }

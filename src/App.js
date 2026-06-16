@@ -135,7 +135,7 @@ function App() {
               >
                 OneStopShop
               </h1>
-              <p style={{ margin: '6px 0 0 0', color: '#cbd5e1', fontSize: '0.95rem', fontWeight: 500 }}>
+              <p style={{ margin: '6px 0 0 0', color: '#000000', fontSize: '0.95rem', fontWeight: 500 }}>
                 Everything You Need, All in One Place
               </p>
             </div>

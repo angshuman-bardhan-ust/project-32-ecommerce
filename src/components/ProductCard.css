@@ -92,12 +92,14 @@
 .product-info h3 {
   margin: 0 0 0.5rem 0;
   font-size: 1.2rem;
-  color: #2c3e50;
+  color: #000000;
+  font-family: math;
 }
 
 .description {
-  color: #7f8c8d;
-  font-size: 0.9rem;
+  color: #000000;
+  font-size: 1rem;
+  font-weight: 600;
   margin: 0 0 1rem 0;
   flex: 1;
 }

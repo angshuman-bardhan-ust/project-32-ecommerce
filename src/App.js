@@ -113,7 +113,33 @@ function App() {
     <div className="App">
       <header className="header">
         <div className="header-container">
-          <h1>🛍️ Product Store</h1>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '18px', padding: '12px 0' }}>
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/263/263142.png"
+              alt="Shopping Logo"
+              style={{ width: '60px', height: '60px', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.15)' }}
+            />
+
+            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+              <h1
+                style={{
+                  marginRight: '4rem',
+                  fontSize: '2rem',
+                  fontWeight: 800,
+                  background: 'linear-gradient(90deg, #4f46e5, #7c3aed, #ec4899)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  letterSpacing: '-1px',
+                  fontFamily: "'Poppins', sans-serif",
+                }}
+              >
+                OneStopShop
+              </h1>
+              <p style={{ margin: '6px 0 0 0', color: '#cbd5e1', fontSize: '0.95rem', fontWeight: 500 }}>
+                Everything You Need, All in One Place
+              </p>
+            </div>
+          </div>
           <div className="header-right">
             {view === 'products' && (
               <input
@@ -152,7 +178,7 @@ function App() {
               className={`nav-button favorites-button${view === 'favorites' ? ' active' : ''}`}
               onClick={() => setView(view === 'favorites' ? 'products' : 'favorites')}
             >
-              &#10084; Favorites
+              Favorites
               {favoriteIds.length > 0 && (
                 <span className="cart-badge">{favoriteIds.length}</span>
               )}
@@ -161,7 +187,7 @@ function App() {
               className={`cart-button${view === 'cart' ? ' active' : ''}`}
               onClick={() => setView(view === 'cart' ? 'products' : 'cart')}
             >
-              🛒 Cart
+            Cart
               {cartItems.length > 0 && (
                 <span className="cart-badge">
                   {cartItems.reduce((sum, item) => sum + item.quantity, 0)}

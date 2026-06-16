@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Wireless Headphones",
     "price": 79.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/1/400/300",
     "description": "High-quality wireless headphones with noise cancellation",
     "category": "Audio"
   },
@@ -11,7 +11,7 @@
     "id": 2,
     "name": "Smart Watch",
     "price": 199.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/2/400/300",
     "description": "Feature-rich smartwatch with fitness tracking",
     "category": "Wearable"
   },
@@ -19,7 +19,7 @@
     "id": 3,
     "name": "USB-C Cable",
     "price": 15.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/3/400/300",
     "description": "Durable and fast charging USB-C cable",
     "category": "Accessories"
   },
@@ -27,7 +27,7 @@
     "id": 4,
     "name": "Phone Stand",
     "price": 25.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/4/400/300",
     "description": "Adjustable phone stand for any device",
     "category": "Accessories"
   },
@@ -35,7 +35,7 @@
     "id": 5,
     "name": "Portable Speaker",
     "price": 59.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/5/400/300",
     "description": "Waterproof Bluetooth speaker with 12-hour battery",
     "category": "Audio"
   },
@@ -43,7 +43,7 @@
     "id": 6,
     "name": "Screen Protector",
     "price": 12.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/6/400/300",
     "description": "Tempered glass screen protector for smartphones",
     "category": "Accessories"
   }
@@ -52,7 +52,7 @@
     "id": 7,
     "name": "Laptop Sleeve",
     "price": 29.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/7/400/300",
     "description": "Protective neoprene laptop sleeve for 13-15 inch laptops",
     "category": "Accessories"
   },
@@ -60,7 +60,7 @@
     "id": 8,
     "name": "Wireless Mouse",
     "price": 24.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/8/400/300",
     "description": "Ergonomic wireless mouse with adjustable DPI",
     "category": "Accessories"
   },
@@ -68,7 +68,7 @@
     "id": 9,
     "name": "Mechanical Keyboard",
     "price": 89.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/9/400/300",
     "description": "Compact mechanical keyboard with RGB backlight",
     "category": "Computing"
   },
@@ -76,7 +76,7 @@
     "id": 10,
     "name": "External SSD",
     "price": 129.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/10/400/300",
     "description": "Fast portable external SSD with USB-C connectivity",
     "category": "Storage"
   },
@@ -84,7 +84,7 @@
     "id": 11,
     "name": "Desk Lamp",
     "price": 34.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/11/400/300",
     "description": "Adjustable LED desk lamp with touch controls",
     "category": "Home"
   },
@@ -92,7 +92,7 @@
     "id": 12,
     "name": "Travel Backpack",
     "price": 69.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/12/400/300",
     "description": "Durable travel backpack with laptop compartment",
     "category": "Accessories"
   }
@@ -101,7 +101,7 @@
     "id": 13,
     "name": "Wireless Charger",
     "price": 39.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/13/400/300",
     "description": "Fast Qi wireless charger for smartphones",
     "category": "Accessories"
   },
@@ -109,7 +109,7 @@
     "id": 14,
     "name": "Bluetooth Earbuds",
     "price": 49.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/14/400/300",
     "description": "Compact true wireless earbuds with charging case",
     "category": "Audio"
   },
@@ -117,7 +117,7 @@
     "id": 15,
     "name": "Action Camera",
     "price": 149.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/15/400/300",
     "description": "Waterproof action camera with 4K recording",
     "category": "Camera"
   },
@@ -125,7 +125,7 @@
     "id": 16,
     "name": "Fitness Band",
     "price": 39.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/16/400/300",
     "description": "Lightweight fitness tracker with heart-rate monitor",
     "category": "Fitness"
   },
@@ -133,7 +133,7 @@
     "id": 17,
     "name": "Smart Light Bulb",
     "price": 19.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/17/400/300",
     "description": "Color-changing LED smart bulb with app control",
     "category": "Smart Home"
   },
@@ -141,7 +141,7 @@
     "id": 18,
     "name": "HDMI Cable",
     "price": 9.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/18/400/300",
     "description": "High-speed HDMI cable for 4K video",
     "category": "Accessories"
   },
@@ -149,7 +149,7 @@
     "id": 19,
     "name": "Power Bank",
     "price": 39.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/19/400/300",
     "description": "10000mAh portable power bank with USB-C",
     "category": "Accessories"
   },
@@ -157,7 +157,7 @@
     "id": 20,
     "name": "Gaming Headset",
     "price": 69.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/20/400/300",
     "description": "Surround-sound gaming headset with mic",
     "category": "Audio"
   },
@@ -165,7 +165,7 @@
     "id": 21,
     "name": "4K Monitor",
     "price": 299.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/21/400/300",
     "description": "27-inch 4K monitor with HDR support",
     "category": "Computing"
   },
@@ -173,7 +173,7 @@
     "id": 22,
     "name": "Webcam",
     "price": 59.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/22/400/300",
     "description": "Full HD webcam with built-in microphone",
     "category": "Computing"
   },
@@ -181,7 +181,7 @@
     "id": 23,
     "name": "Microphone",
     "price": 79.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/23/400/300",
     "description": "USB condenser microphone for streaming",
     "category": "Audio"
   },
@@ -189,7 +189,7 @@
     "id": 24,
     "name": "Graphics Tablet",
     "price": 129.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/24/400/300",
     "description": "Drawing tablet with pressure-sensitive pen",
     "category": "Computing"
   },
@@ -197,7 +197,7 @@
     "id": 25,
     "name": "Phone Case",
     "price": 14.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/25/400/300",
     "description": "Slim protective case for various phone models",
     "category": "Accessories"
   },
@@ -205,7 +205,7 @@
     "id": 26,
     "name": "DSLR Camera",
     "price": 499.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/26/400/300",
     "description": "Entry-level DSLR camera with kit lens",
     "category": "Camera"
   },
@@ -213,7 +213,7 @@
     "id": 27,
     "name": "Tripod",
     "price": 29.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/27/400/300",
     "description": "Lightweight tripod for cameras and phones",
     "category": "Camera"
   },
@@ -221,7 +221,7 @@
     "id": 28,
     "name": "Memory Card",
     "price": 24.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/28/400/300",
     "description": "High-speed microSD card for cameras and phones",
     "category": "Storage"
   },
@@ -229,7 +229,7 @@
     "id": 29,
     "name": "Wireless Charging Pad",
     "price": 29.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/29/400/300",
     "description": "Slim wireless charging pad for Qi devices",
     "category": "Accessories"
   },
@@ -237,7 +237,7 @@
     "id": 30,
     "name": "Noise Cancelling Earbuds",
     "price": 99.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/30/400/300",
     "description": "In-ear earbuds with active noise cancellation",
     "category": "Audio"
   },
@@ -245,7 +245,7 @@
     "id": 31,
     "name": "Smart Plug",
     "price": 17.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/31/400/300",
     "description": "Wi‑Fi smart plug for remote appliance control",
     "category": "Smart Home"
   },
@@ -253,7 +253,7 @@
     "id": 32,
     "name": "Portable Projector",
     "price": 199.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/32/400/300",
     "description": "Compact projector for movies and presentations",
     "category": "TV & Video"
   },
@@ -261,7 +261,7 @@
     "id": 33,
     "name": "VR Headset",
     "price": 399.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/33/400/300",
     "description": "Immersive virtual reality headset",
     "category": "Electronics"
   },
@@ -269,7 +269,7 @@
     "id": 34,
     "name": "Smart Thermostat",
     "price": 149.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/34/400/300",
     "description": "Programmable smart thermostat with app control",
     "category": "Smart Home"
   },
@@ -277,7 +277,7 @@
     "id": 35,
     "name": "Robot Vacuum",
     "price": 249.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/35/400/300",
     "description": "Self‑charging robot vacuum cleaner",
     "category": "Home"
   },
@@ -285,7 +285,7 @@
     "id": 36,
     "name": "Air Purifier",
     "price": 129.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/36/400/300",
     "description": "HEPA air purifier for home use",
     "category": "Home"
   },
@@ -293,7 +293,7 @@
     "id": 37,
     "name": "Electric Kettle",
     "price": 49.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/37/400/300",
     "description": "Fast-boil electric kettle with auto shut-off",
     "category": "Kitchen"
   },
@@ -301,7 +301,7 @@
     "id": 38,
     "name": "Coffee Maker",
     "price": 89.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/38/400/300",
     "description": "Programmable coffee maker with carafe",
     "category": "Kitchen"
   },
@@ -309,7 +309,7 @@
     "id": 39,
     "name": "Blender",
     "price": 59.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/39/400/300",
     "description": "High-speed countertop blender for smoothies",
     "category": "Kitchen"
   },
@@ -317,7 +317,7 @@
     "id": 40,
     "name": "Smart Scale",
     "price": 39.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/40/400/300",
     "description": "Body composition smart scale with app sync",
     "category": "Fitness"
   },
@@ -325,7 +325,7 @@
     "id": 41,
     "name": "Wireless Router",
     "price": 119.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/41/400/300",
     "description": "Dual-band wireless router for home networks",
     "category": "Networking"
   },
@@ -333,7 +333,7 @@
     "id": 42,
     "name": "NAS Drive",
     "price": 249.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/42/400/300",
     "description": "Network-attached storage for backups",
     "category": "Storage"
   },
@@ -341,7 +341,7 @@
     "id": 43,
     "name": "HDMI Switch",
     "price": 39.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/43/400/300",
     "description": "3-port HDMI switcher with remote",
     "category": "Accessories"
   },
@@ -349,7 +349,7 @@
     "id": 44,
     "name": "Laptop Stand",
     "price": 34.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/44/400/300",
     "description": "Adjustable laptop stand for better ergonomics",
     "category": "Accessories"
   },
@@ -357,7 +357,7 @@
     "id": 45,
     "name": "Cable Organizer",
     "price": 12.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/45/400/300",
     "description": "Desk cable organizer and clips",
     "category": "Accessories"
   },
@@ -365,7 +365,7 @@
     "id": 46,
     "name": "DSLR Lens",
     "price": 249.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/46/400/300",
     "description": "Telephoto lens compatible with DSLR cameras",
     "category": "Camera"
   },
@@ -373,7 +373,7 @@
     "id": 47,
     "name": "Portable Monitor",
     "price": 179.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/47/400/300",
     "description": "14-inch portable USB-C monitor",
     "category": "Computing"
   },
@@ -381,7 +381,7 @@
     "id": 48,
     "name": "Smart Camera",
     "price": 129.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/48/400/300",
     "description": "Outdoor smart security camera with night vision",
     "category": "Camera"
   },
@@ -389,7 +389,7 @@
     "id": 49,
     "name": "E-reader",
     "price": 99.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/49/400/300",
     "description": "Lightweight e-reader with glare-free display",
     "category": "Electronics"
   },
@@ -397,7 +397,7 @@
     "id": 50,
     "name": "Portable Charger",
     "price": 44.99,
-    "image": "https://picsum.photos/200",
+    "image": "https://picsum.photos/seed/50/400/300",
     "description": "Compact fast-charging portable charger",
     "category": "Accessories"
   }

@@ -7,7 +7,7 @@ function FavoritesList({ favorites, onRemoveFavorite, onAddToCart, cartItems, on
       <div className="favorites-container">
         <div className="favorites-header">
           <button className="back-button" onClick={onBack}>&#8592; Back to Shop</button>
-          <h2>&#10084; Favorites</h2>
+          <h2>Favorites</h2>
         </div>
         <div className="empty-favorites">
           <p>No favorites yet. Click the &#10084; on a product to save it here!</p>

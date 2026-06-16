@@ -141,59 +141,62 @@ function App() {
             </div>
           </div>
           <div className="header-right">
-            {view === 'products' && (
-              <input
-                type="text"
-                className="search-input"
-                placeholder="Search products..."
-                value={searchQuery}
-                onChange={e => setSearchQuery(e.target.value)}
-              />
-            )}
-            {view === 'products' && (
-              <select
-                className="sort-select"
-                value={categoryFilter}
-                onChange={e => setCategoryFilter(e.target.value)}
-              >
-                {categories.map(cat => (
-                  <option key={cat} value={cat}>{cat === 'all' ? 'All Categories' : cat}</option>
-                ))}
-              </select>
-            )}
-            {view === 'products' && (
-              <select
-                className="sort-select"
-                value={sortOption}
-                onChange={e => setSortOption(e.target.value)}
-              >
-                <option value="default">Sort: Default</option>
-                <option value="price-asc">Price: Low to High</option>
-                <option value="price-desc">Price: High to Low</option>
-                <option value="name-asc">Name: A → Z</option>
-                <option value="name-desc">Name: Z → A</option>
-              </select>
-            )}
-            <button
-              className={`nav-button favorites-button${view === 'favorites' ? ' active' : ''}`}
-              onClick={() => setView(view === 'favorites' ? 'products' : 'favorites')}
+            <input
+              type="text"
+              className={`search-input${view === 'products' ? '' : ' hidden'}`}
+              placeholder="Search products..."
+              value={searchQuery}
+              onChange={e => setSearchQuery(e.target.value)}
+            />
+            <select
+              className={`sort-select${view === 'products' ? '' : ' hidden'}`}
+              value={categoryFilter}
+              onChange={e => setCategoryFilter(e.target.value)}
             >
-              Favorites
-              {favoriteIds.length > 0 && (
-                <span className="cart-badge">{favoriteIds.length}</span>
-              )}
-            </button>
-            <button
-              className={`cart-button${view === 'cart' ? ' active' : ''}`}
-              onClick={() => setView(view === 'cart' ? 'products' : 'cart')}
+              {categories.map(cat => (
+                <option key={cat} value={cat}>{cat === 'all' ? 'All Categories' : cat}</option>
+              ))}
+            </select>
+            <select
+              className={`sort-select${view === 'products' ? '' : ' hidden'}`}
+              value={sortOption}
+              onChange={e => setSortOption(e.target.value)}
             >
-            Cart
-              {cartItems.length > 0 && (
-                <span className="cart-badge">
-                  {cartItems.reduce((sum, item) => sum + item.quantity, 0)}
-                </span>
-              )}
-            </button>
+              <option value="default">Sort: Default</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="name-asc">Name: A → Z</option>
+              <option value="name-desc">Name: Z → A</option>
+            </select>
+            <button
+  className={`nav-button favorites-button${view === 'favorites' ? ' active' : ''}`}
+  onClick={() => setView(view === 'favorites' ? 'products' : 'favorites')}
+>
+  <img
+    src="https://cdn-icons-png.flaticon.com/512/833/833472.png"
+    alt="Favorites"
+    style={{ width: "24px", height: "24px" }}
+  />
+  {favoriteIds.length > 0 && (
+    <span className="cart-badge">{favoriteIds.length}</span>
+  )}
+</button>
+
+<button
+  className={`cart-button${view === 'cart' ? ' active' : ''}`}
+  onClick={() => setView(view === 'cart' ? 'products' : 'cart')}
+>
+  <img
+    src="https://cdn-icons-png.flaticon.com/512/3144/3144456.png"
+    alt="Cart"
+    style={{ width: "24px", height: "24px" }}
+  />
+  {cartItems.length > 0 && (
+    <span className="cart-badge">
+      {cartItems.reduce((sum, item) => sum + item.quantity, 0)}
+    </span>
+  )}
+</button>
           </div>
         </div>
       </header>
